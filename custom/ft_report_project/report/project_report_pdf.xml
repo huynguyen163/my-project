@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_project_id_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="text-center">
+                        <h2 style="color:#33CCFF; text-transform:capitalize"  >
+                            <t t-esc="form_data['project'][1]"/>
+                        </h2>
+                    </div>
+                    <br/>
+                    <div class="row"> 
+                        <div class="col-2">                                       
+                            <span><strong>Assigned To</strong></span>
+                            <div t-esc="form_data['user_id'][1]"/>  
+                        </div>
+                        <div class="col-2 offset-1">                                 
+                            <span><strong>Stage</strong></span>
+                            <div t-esc="form_data['stage'][1]"/>                      
+                        </div>
+                        <div class="col-2 offset-1">                                 
+                            <span><strong>Start Date</strong></span>
+                            <div t-esc="form_data['start_date']"/>                      
+                        </div>
+                        <div class="col-2 offset-1">                                 
+                            <span><strong>End Date</strong></span>
+                            <div t-esc="form_data['end_date']"/>                      
+                        </div>
+                    </div>
+                    <br/>
+                    <table class="table table-bordered mt32" style="text-align: center">
+                        <col width ="50" />
+                        <col width ="50" />
+                        <col width ="50" />
+                        <col width ="50" />
+                        <col width ="50" />
+                        <col width ="50" />
+                        <col width ="50" />
+                        <thead style="text-align: center; bold:True">
+                            <tr style="background-color:#33CCFF;" >
+                                <th name="th_task_name">
+                                    <span>Task Name</span>
+                                </th>
+                                <th name="th_assigned_to" >                                
+                                    <span>Assigned To</span>
+                                </th>
+                                <th name="th_assigning_date">                                
+                                    <span>Assigning Date</span>
+                                </th>
+                                <th name="th_deadline" >                                
+                                    <span>Deadline</span>
+                                </th>
+                                <th name="th_planned_hours">                                
+                                    <span>Planned Hours</span>
+                                </th>
+                                <th name="th_spent_hours" >                                
+                                    <span>Spent Hours</span>
+                                </th>
+                                <th name="th_remaining_hours" class="text-left">                                
+                                    <span>Remaining Hours</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <t t-foreach="projects" t-as="line">
+                            <tr>
+                                <td>
+                                    <t t-esc="line['name']"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line['portal_user_names']"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line['date_assign']"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line['date_deadline']"/>
+                                </td>
+                                <td>
+                                    <t t-esc="line['planned_hours']"/>
+                                </td>
+                                <td>  
+                                </td>
+                                <td>                               
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+

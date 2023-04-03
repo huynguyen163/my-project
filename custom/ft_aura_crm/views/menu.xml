@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="crm_campaign_root"
+        name="Campaign"
+        parent="crm.crm_menu_root"
+        action="utm.utm_campaign_action"
+        sequence="3" />
+    <menuitem name="Leads" action="crm.crm_lead_all_leads" id="ft_lead_menu"
+        parent="crm.crm_menu_leads" />
+    <menuitem name="Import &amp; Assign Lead" action="ft_import_lead_action"
+        id="ft_import_lead_menu" parent="crm.crm_menu_leads"
+        groups="ft_aura_crm.ft_import_lead_group" />
+</odoo>

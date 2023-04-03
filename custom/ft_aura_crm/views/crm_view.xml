@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+<!-- fields probability hiển thị trên kanban   -->
+
+        <record id="inherit_probability_view_form" model="ir.ui.view">
+            <field name="name">inherit.probability.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_kanban_bottom_left')]" position="after">
+                    <div>
+                        <field name = "probability" widget="percentpie" />
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+<!-- fields tag_ids chon 1 tag cho 1 lead. -->
+        <record id="inherit_tag_ids_view_form" model="ir.ui.view">
+            <field name="name">inherit.tag.ids.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="replace">                  
+                        <field name = "tag_id" />
+                        <field name = "mentor_id" />
+                </xpath>
+                <xpath expr="//page[@name='lead']" position="after">                  
+                       <page name = 'text' string='Call History'>
+                            <field name ='history_ids'>
+                                <tree editable='bottom'>
+                                    <field name= 'date'/>
+                                    <field name= 'user_id' />
+                                    <field name= 'status' />
+                                    <field name= 'descriptions' />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name= 'date'/>
+                                        <field name= 'user_id' />
+                                        <field name= 'status' />
+                                    </group>
+                                    <group>
+                                        <field name= 'descriptions' />
+                                    </group>
+                                </form>
+                            </field>
+                       </page>
+                </xpath>
+                <xpath expr="////field[@name='phone']" position="after">   
+                    <button name="click2call" class="fa fa-phone"
+                                        title="This phone number is calling by IP Phone."
+                                        type="object" context="{'default_phone': phone}" groups="base.group_user"
+                                        attrs="{'invisible': [('phone', '=', False)]}" html=" IP Phone"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

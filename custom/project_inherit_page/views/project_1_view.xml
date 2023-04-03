@@ -1,0 +1,16 @@
+<odoo>
+   <record id="project_inherit__view_form" model="ir.ui.view">
+        <field name="name">project.inherit.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='extra_info']" position="after">
+                <page name = 'sheet' string='Sheet'>
+                    <group>
+                        <field name= 'name_sheet' />
+                    </group>
+                </page>
+            </xpath>   
+        </field>
+    </record>
+</odoo>

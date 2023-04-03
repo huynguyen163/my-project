@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ft_utm_campaign_view_form" model="ir.ui.view">
+            <field name="name">inherit.campaign.id.form</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">    
+                    <field name = "campaign_type_id" />
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="replace">                  
+                        <field name = "stage" widget='statusbar' nolabel='1' options="{'clickable': '1'}" statusbar_visible='planing,completed,cancelled' />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="ft_utm_campaign_view_tree" model="ir.ui.view">
+            <field name="name">ft.utm.campaign.view.tree</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stage_id']" position="replace">                  
+                        <field name = 'stage' string='Stage' />                   
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="after">                  
+                        <field name="invoiced_amount" string='Invoiced Amount'/>
+                        <field name="quotation_count" string='Quotation'/>
+                        <field name="crm_lead_count" string='Leads'/>                                 
+                </xpath>
+            </field>
+        </record>
+
+        <record id="utm_campaign_type_view_tree" model="ir.ui.view">
+            <field name="name">utm.campaign.type.tree</field>
+            <field name="model">utm.campaign.type</field>
+            <field name="arch" type="xml">
+                <tree string="Utm Campaign Type Tree">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="utm_campaign_type_view_form" model="ir.ui.view">
+            <field name="name">utm.campaign.type.form</field>
+            <field name="model">utm.campaign.type</field>
+            <field name="arch" type="xml">
+                <form string="Utm Campaign Type Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>         
+                        </group>
+                    </sheet>                   
+                </form>
+            </field>
+        </record>
+
+        <record id="utm_campaign_type_action" model="ir.actions.act_window">
+            <field name="name">Campaign Type</field>
+            <field name="res_model">utm.campaign.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        
+        <menuitem
+                id="utm_campaign_type"
+                name="Campaign Type"
+                parent="crm.crm_menu_config"
+                action="utm_campaign_type_action"
+                sequence="50"/>
+    </data>
+</odoo>

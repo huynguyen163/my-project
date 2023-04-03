@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_lead_wizard,access_import_lead_wizard,model_import_lead_wizard,base.group_user,1,1,1,1
+access_aura_message_wizard,access_aura_message_wizard,model_aura_message_wizard,,1,1,1,0
+access_utm_campaign_type_user,utm_campaign_type user,model_utm_campaign_type,base.group_user,1,1,1,1
+access_crm_call_history_wizard,access_crm_call_history_wizard,model_crm_call_history_wizard,,1,1,1,0
+access_crm_call_history_user,crm_call_history user,model_crm_call_history,base.group_user,1,1,1,1
+access_aura_message_verify_wizard,access_aura_message_verify_wizard,model_aura_message_verify_wizard,base.group_user,1,1,1,1
+access_assign_lead_to_saleperson,access_assign_lead_to_saleperson,model_import_sale_person_wizard,base.group_user,1,1,1,1
+access_assign_lead_to_saleperson_detail,access_assign_lead_to_saleperson_detail,model_import_sale_person_detail_wizard,,1,1,1,1

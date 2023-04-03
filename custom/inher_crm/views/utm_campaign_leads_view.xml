@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="utm_campaign_lead_view_tree" model="ir.ui.view">
+            <field name="name">utm.campaign.lead.tree</field>
+            <field name="model">utm.campaign.lead</field>
+            <field name="arch" type="xml">
+                <tree string="Campaign Leads Tree">
+                    <field name="call_date" />
+                    <field name="telesales_staff" widget='many2one_avatar_user' />
+                    <field name="call_status" />
+                    <field name="call_content" />
+                    <field name="lead_id" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="utm_campaign_lead_view_form" model="ir.ui.view">
+            <field name="name">utm.campaign.lead.form</field>
+            <field name="model">utm.campaign.lead</field>
+            <field name="arch" type="xml">
+                <form string="Campaign Leads Form">
+                    <sheet>                   
+                        <notebook>
+                            <page string ='Text' name='text'>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="lead_id" />
+                                                <field name="call_date" />
+                                                <field name="telesales_staff" widget='many2one_avatar_user' />
+                                            </group>
+                                            <group>
+                                                <field name="call_status" />
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="call_content" />
+                                        </group> 
+                                    </form>
+                            </page>
+                        </notebook>        
+                    </sheet>                   
+                </form>
+            </field>
+        </record>
+
+        
+
+        <record id="utm_campaign_lead_action" model="ir.actions.act_window">
+            <field name="name">Campaign Lead</field>
+            <field name="res_model">utm.campaign.lead</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        
+        <menuitem
+                id="utm_campaign_lead"
+                name="Leads"
+                parent="crm.crm_menu_root"
+                action="utm_campaign_lead_action"
+                sequence="3"/>
+
+    </data>
+</odoo>

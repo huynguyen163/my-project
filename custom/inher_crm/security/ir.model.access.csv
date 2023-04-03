@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_utm_campaign_type_user,utm_campaign_type user,model_utm_campaign_type,group_users,1,1,1,1
+access_utm_campaign_lead_user,utm_campaign_lead user,model_utm_campaign_lead,group_users,1,1,1,1
+access_utm_campaign_leads_wizard_user,utm_campaign_leads_wizard user,model_utm_campaign_leads_wizard,group_users,1,1,1,1
+
+
+
+
+

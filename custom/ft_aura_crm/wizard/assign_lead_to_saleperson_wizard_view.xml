@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="import_sale_person_wizard" model="ir.ui.view">
+        <field name="name">import.sale.person.wizard</field>
+        <field name="model">import.sale.person.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Sale Person">
+                <group>
+                    <field name="total_record" />
+                    <field name="team_id" />
+                    <field name="sale_person_ids" widget="many2many_tags"
+                        domain="[('crm_team_id','=',team_id)]" />
+                    <field name="lead_ids" invisible="1"/>
+                    <button name="generate_lead" type="object" string="Generate Lead"/>
+                </group>
+                <group>
+                    <field name="assign_ids">
+                        <tree editable="bottom">
+                            <field name="user_id" readonly="1"/>
+                            <field name="total_lead"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button name="apply" string="OK"
+                        class="btn-primary" type="object" />
+                    <button string="Cancel" special="cancel" class="btn-primary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="ft_import_sale_person_action" model="ir.actions.act_window">
+        <field name="name">Import Sale Person</field>
+        <field name="res_model">import.sale.person.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="import_sale_person_wizard" />
+        <field name="binding_model_id" ref="model_crm_lead" />
+        <field name="binding_view_types">list</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

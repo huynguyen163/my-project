@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_cham_cong_report"
+        name="Chấm Công"
+        parent="hr.hr_menu_hr_reports"
+        action="wizard_cham_cong_action"
+    />
+
+</odoo>

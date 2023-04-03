@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_report_excel_sale"
+            name="Report Sale"
+            action="report_excel_sale_wizard_act"
+            parent="sale.menu_sale_report"/>
+</odoo>

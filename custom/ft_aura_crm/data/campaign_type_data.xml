@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2022 FOSTECH (<http://fostech.vn>).
+-->
+<odoo>
+    <record id="type_1" model="utm.campaign.type">
+        <field name="name">Conference</field>
+    </record>
+    <record id="type_2" model="utm.campaign.type">
+        <field name="name">Webinar</field>
+    </record>
+    <record id="type_3" model="utm.campaign.type">
+        <field name="name">Trade Show</field>
+    </record>
+    <record id="type_4" model="utm.campaign.type">
+        <field name="name">Public Relations</field>
+    </record>
+    <record id="type_5" model="utm.campaign.type">
+        <field name="name">Partners</field>
+    </record>
+    <record id="type_6" model="utm.campaign.type">
+        <field name="name">Referral Program</field>
+    </record>
+    <record id="type_7" model="utm.campaign.type">
+        <field name="name">Banner Ads</field>
+    </record>
+    <record id="type_8" model="utm.campaign.type">
+        <field name="name">Direct Email</field>
+    </record>
+    <record id="type_9" model="utm.campaign.type">
+        <field name="name">Telemarketing</field>
+    </record>
+    <record id="type_10" model="utm.campaign.type">
+        <field name="name">Others</field>
+    </record>
+    
+</odoo>

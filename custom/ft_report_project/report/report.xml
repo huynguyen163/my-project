@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_project_xls" model="ir.actions.report">
+        <field name="name">Print Project Report xlsx</field>
+        <field name="model">project.project</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">ft_report_project.report_project_id_xlsx</field>
+        <field name="report_file">ft_report_project.report_project_id_xlsx</field>
+        <field name="binding_type">report</field>
+        <field name="binding_model_id" ref="project.model_project_project"/>
+    </record>
+
+    <record id="report_project_pdf" model="ir.actions.report">
+        <field name="name">Print Project Report pdf</field>
+        <field name="model">project.project</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ft_report_project.report_project_id_pdf</field>
+        <field name="report_file">ft_report_project.report_project_id_pdf</field>
+        <field name="binding_type">report</field>
+        <field name="binding_model_id" ref="project.model_project_project"/>
+    </record>
+</odoo>

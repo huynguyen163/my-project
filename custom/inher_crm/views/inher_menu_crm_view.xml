@@ -1,0 +1,10 @@
+ <odoo>                 
+        <menuitem
+                id="crm_lead_menu_campaign"
+                name="Campaign"
+                parent="crm.crm_menu_root"
+                action="utm.utm_campaign_action"
+                sequence="2"/>
+
+
+</odoo>

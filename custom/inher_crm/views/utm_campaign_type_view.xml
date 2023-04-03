@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="utm_campaign_type_view_tree" model="ir.ui.view">
+            <field name="name">utm.campaign.type.tree</field>
+            <field name="model">utm.campaign.type</field>
+            <field name="arch" type="xml">
+                <tree string="Utm Campaign Type Tree">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="utm_campaign_type_view_form" model="ir.ui.view">
+            <field name="name">utm.campaign.type.form</field>
+            <field name="model">utm.campaign.type</field>
+            <field name="arch" type="xml">
+                <form string="Utm Campaign Type Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>         
+                        </group>
+                    </sheet>                   
+                </form>
+            </field>
+        </record>
+
+        <record id="utm_campaign_type_action" model="ir.actions.act_window">
+            <field name="name">Campaign Type</field>
+            <field name="res_model">utm.campaign.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        
+        <menuitem
+                id="utm_campaign_type"
+                name="Campaign Type"
+                parent="crm.crm_menu_config"
+                action="utm_campaign_type_action"
+                sequence="50"/>
+    </data>
+</odoo>

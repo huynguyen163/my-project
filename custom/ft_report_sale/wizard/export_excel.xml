@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="report_excel_sale_view" model="ir.ui.view">
+            <field name="name">Report excel view</field>
+            <field name="model">sale.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Excel"> 
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="user_id" />
+                        <field name="from_date" />
+                        <field name="date_to" />
+                    </group>
+                    <footer>
+                        <button name="generate_xlsx_report" type="object" string="Export" class="oe_highlight" />
+                        <button string="Cancel" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="report_excel_sale_wizard_act">
+            <field name="name">Report</field>
+            <field name="res_model">sale.report.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="report_excel_sale_view"/>
+            <field name="binding_model_id" ref="model_sale_report_wizard" />
+        </record>
+    </data>
+</odoo>

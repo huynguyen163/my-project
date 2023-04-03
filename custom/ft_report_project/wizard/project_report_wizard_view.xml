@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record id="report_excel_project_view_form" model="ir.ui.view">
+            <field name="name">Report excel form</field>
+            <field name="model">project.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Excel"> 
+                    <group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date" />
+                        </group>
+                        <group>    
+                            <field name="user_id" />
+                            <field name="stage" />
+                            <field name="project" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_print_report_pdf" type="object" string="Print Report Pdf" class="oe_highlight" />
+                        <button name="action_print_report_excel" type="object" string="Print Report Excel" class="oe_highlight" />
+                        <button string="Cancel" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="report_excel_project_wizard">
+            <field name="name">Print Report Project </field>
+            <field name="res_model">project.report.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="report_excel_project_view_form"/>
+            <field name="binding_model_id" ref="project.model_project_project" />
+        </record>
+    </data>
+</odoo>

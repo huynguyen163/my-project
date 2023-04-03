@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+<!-- Hiển thị field campaign_type_id -->
+        <record id="inherit_compaign_id_view_form" model="ir.ui.view">
+            <field name="name">inherit.compaign.id.form</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@id='top-group']" position="after">    
+                    <div class='number_phone'>
+                        <group>              
+                            <field name = "campaign_type_id" />
+                        </group>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+<!-- stage: planing, completed,cancel -->
+        <record id="inherit_stage_id_view_form" model="ir.ui.view">
+            <field name="name">inherit.stage.id.form</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stage_id']" position="replace">                  
+                        <field name = "stage" widget='statusbar' nolabel='1' options="{'clickable': '1'}" statusbar_visible='planing,completed,cancelled' />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_stage_view_tree" model="ir.ui.view">
+            <field name="name">inherit.stage.tree</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stage_id']" position="replace">                  
+                        <field name = 'stage' string='Stage' />                   
+                </xpath>
+            </field>
+        </record>
+<!-- đưa ra ngoài view list -->
+        <record id="inherit_invoiced_amount_view_tree" model="ir.ui.view">
+            <field name="name">inherit.invoiced.amount.tree</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">                  
+                        <field name = 'invoiced_amount' string='Invoiced Amount' />                   
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_quotation_count_view_tree" model="ir.ui.view">
+            <field name="name">inherit.quotation.count.tree</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">                  
+                        <field name = "quotation_count" string='Quotation' />                   
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_use_leads_count_view_tree" model="ir.ui.view">
+            <field name="name">inherit.use.leads.count.tree</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_tree"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='tag_ids']" position="after">
+                        <field name = "use_leads" string='Use Leads' />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_call_history_wizard_view_form" model="ir.ui.view">
+            <field name="name">crm.call.history.wizard.form</field>
+            <field name="model">crm.call.history.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Campaign Leads Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id" widget='many2one_avatar_user'/>
+                                <field name="call_status" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="descriptions" />
+                        </group> 
+                    </sheet>
+                    <footer>
+                        <button string="Confirm" name="apply_call_history" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_call_history_wizard_action" model="ir.actions.act_window">
+            <field name="name">Call History</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.call.history.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="crm_call_history_wizard_view_form" />
+        </record>
+    </data>
+</odoo>

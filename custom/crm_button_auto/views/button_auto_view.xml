@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="button_auto_view_form" model="ir.ui.view">
+            <field name="name">button.auto.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(crm.action_crm_lead2opportunity_partner)d']" position="after">
+                    <button name ='action_set_auto' string='Auto' attrs="{'invisible': ['|', ('active', '=', False), ('type', '=', 'lead')]}"/>
+                </xpath>   
+            </field>
+        </record>
+    </data>
+</odoo>

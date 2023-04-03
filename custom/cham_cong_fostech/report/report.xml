@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_xlsx_cham_cong_action" model="ir.actions.report">
+        <field name="name">Báo Cáo Chấm Công</field>
+        <field name="model">cham.cong.fostech.report.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">cham_cong_fostech.report_cham_cong_xlsx</field>
+        <field name="report_file">cham_cong_fostech.report_cham_cong_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
